@@ -16,3 +16,7 @@ Rectangle rectangle1 = new Rectangle();
 //int x = 10;
 //int y = x;
 //y = 12;
+
+Node node = new Node();
+
+//BinaryTree.Add(node, 3);
