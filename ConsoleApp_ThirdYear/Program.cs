@@ -1,22 +1,27 @@
-﻿using ConsoleApp_ThirdYear;
+﻿using System;
 
+namespace ConsoleApp_ThirdYear
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BinaryTree bt = new BinaryTree();
+            bt.Add(4);
+            bt.Add(1);
+            bt.Add(9);
+            bt.Add(7);
+            bt.Add(2);                      //ubralod gatestvistvis aris es yvelaferi
 
-Rectangle rectangle = new Rectangle(8, 15);
-rectangle.Print();
+            // bt.print(bt.Root);
 
-Rectangle rectangle1 = new Rectangle();
-
-
-//Rectangle rectangle1 = rectangle;
-//rectangle1.Print();
-//rectangle1.Side1 = 3;
-//rectangle1 = new Rectangle(4, 5);
-//rectangle = new Rectangle(6, 7);
-
-//int x = 10;
-//int y = x;
-//y = 12;
-
-Node node = new Node();
-
-//BinaryTree.Add(node, 3);
+            Console.WriteLine(bt.Root.Value);
+            Console.WriteLine(bt.Root.Left.Value);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+        }
+    }
+}

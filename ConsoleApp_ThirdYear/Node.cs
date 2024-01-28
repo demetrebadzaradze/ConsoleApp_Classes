@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_ThirdYear
 {
+    
     class Node
     {
         private int? _value;
@@ -17,38 +18,43 @@ namespace ConsoleApp_ThirdYear
             get => _value;
             set => _value = value;
         }
-
         public Node? Left
         {
             get => _left;
             set => _left = value;
         }
-
         public Node? Right
         {
             get => _right;
             set => _right = value;
         }
-
-        public Node(
-            int? Value = null,
-            Node? Left = null,
-            Node? Right = null)
+        public Node(int? Val = null, Node? L = null, Node? R = null)
         {
-            this.Value = Value;
-            this.Left = Left;
-            this.Right = Right;
+            Value = Val;
+            Left = L;
+            Right = R;
         }
 
         public void Add(int number)
         {
-            if (number < Value)
+            if (number > Value)
             {
-                Left = new Node(number);
+                add(Right, number);
             }
             else
             {
-                Right = new Node(number);
+                add(Left, number);
+            }
+        }
+        private void add(Node node, int number)
+        {
+            if (node == null)
+            {
+                node = new Node(number);
+            }
+            else
+            {
+                node.Add(number);
             }
         }
     }
